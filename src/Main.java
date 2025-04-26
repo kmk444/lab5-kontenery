@@ -17,7 +17,11 @@ public class Main {
         System.out.println(parent.getYoungestChild());
         System.out.println(parent.getChildren());
 
-
-
+        Family family = new Family();
+        family.add(parent);
+        family.add(child1);
+        family.add(child2);
+        System.out.println(parent.getFirstName());;
+        System.out.println(family.get("Jan Kowalski").getFirstName());
     }
 }

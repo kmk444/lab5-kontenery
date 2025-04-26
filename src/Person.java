@@ -2,16 +2,24 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class Person implements Comparable<Person> {
-    private String first_name;
-    private String last_name;
+    private String firstName;
+    private String lastName;
     private LocalDate birthDate;
 
     private SortedSet<Person> children = new TreeSet<>(); // tworzymy new bo to nie jest inicjalizowane no i nie bierzemy go w konstruktorze
 
-    public Person(String first_name, String last_name, LocalDate birthDate) {
-        this.first_name = first_name;
-        this.last_name = last_name;
+    public Person(String firstName, String lastName, LocalDate birthDate) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.birthDate = birthDate;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     @Override
