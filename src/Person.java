@@ -19,4 +19,13 @@ public class Person {
         return children.add(child); // .add() zwraca true jesli element byl nowy
     }
 
+
+    public Person getYoungestChild(){
+        if (children.isEmpty()) return null;
+        Person youngest = (Person) children.toArray()[0];
+        for(Person child : children){
+            if (youngest.birthDate.compareTo(child.birthDate) < 0) youngest = child;
+        }
+        return youngest;
+    }
 }
