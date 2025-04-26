@@ -15,6 +15,7 @@ public class Main {
         parent.adopt(child2);
 
         System.out.println(parent.getYoungestChild());
+        System.out.println(parent.getChildren());
 
 
 

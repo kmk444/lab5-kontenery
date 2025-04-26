@@ -28,4 +28,9 @@ public class Person implements Comparable<Person> {
         return children.last(); // da sie tego uzyc bo uzylismy Comparable i zmienilismy na SortedSet
     }
 
+    public List<Person> getChildren(){
+        List<Person> list = new ArrayList<>(children);
+        Collections.sort(list);
+        return list;
+    }
 }
