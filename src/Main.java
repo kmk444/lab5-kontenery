@@ -7,8 +7,14 @@ public class Main {
 
         List<Person> people = new ArrayList<>();
 
-        people.add(new Person("Jan","Kowalski", LocalDate.of(1945,3,26)));
-        people.add(new Person("Franek","Kowalski", LocalDate.of(1965,4,1)));
+        Person person1 = new Person("Jan","Kowalski", LocalDate.of(1945,3,26));
+        Person person2 = new Person("Franek","Kowalski", LocalDate.of(1965,4,1));
+        people.add(person1);
+        people.add(person2);
+
+
+        System.out.println(person1.adopt(person2));
+        System.out.println(person1.adopt(person2));
 
     }
 }
