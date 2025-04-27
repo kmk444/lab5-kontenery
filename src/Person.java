@@ -22,6 +22,10 @@ public class Person implements Comparable<Person> {
         return lastName;
     }
 
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
     @Override
     public int compareTo(Person o) {
         return this.birthDate.compareTo(o.birthDate);
@@ -38,7 +42,11 @@ public class Person implements Comparable<Person> {
 
     public List<Person> getChildren(){
         List<Person> list = new ArrayList<>(children);
-        Collections.sort(list);
+        Collections.sort(list); // sortowanie listy
         return list;
+    }
+
+    public String name(){ // najpierw to bylo w Family tylko jako key ale zmienilem bo sie przydaje do wyswietlenia
+        return this.getFirstName() + " " + this.getLastName();
     }
 }

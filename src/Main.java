@@ -7,19 +7,26 @@ public class Main {
 
         List<Person> people = new ArrayList<>();
 
-        Person parent = new Person("Jan","Kowalski", LocalDate.of(1945,3,26));
-        Person child1 = new Person("Franek","Kowalski", LocalDate.of(1965,4,1));
-        Person child2 = new Person("Wlodzislaw","Kowalski", LocalDate.of(1955,12,28));
+        Person parent1 = new Person("Jan","Kowalski", LocalDate.of(1945,3,26));
+        Person child1_1 = new Person("Franek","Kowalski", LocalDate.of(1965,4,1));
+        Person child1_2 = new Person("Wlodzislaw","Kowalski", LocalDate.of(1955,12,28));
 
-        parent.adopt(child1);
-        parent.adopt(child2);
+        Person parent2 = new Person("Jan","Nowak", LocalDate.of(1946,3,26));
+        Person child2_1 = new Person("Tomasz","Nowak", LocalDate.of(1970,6,26));
+        Person child2_2 = new Person("Jan","Nowak", LocalDate.of(1960,2,21));
+        parent1.adopt(child1_1);
+        parent1.adopt(child1_2);
 
-        System.out.println(parent.getYoungestChild());
-        System.out.println(parent.getChildren());
+//        System.out.println(parent.getYoungestChild());
+//        System.out.println(parent.getChildren());
 
         Family family = new Family();
-        family.add(parent, child1, child2);
-        System.out.println(parent.getFirstName());;
-        System.out.println(family.get("Jan Kowalski").getFirstName());
+        family.add(parent1, child1_1, child1_2, parent2, child2_1, child2_2);
+
+        Person[] janowie = family.get("Jan Nowak");
+        for(Person jan : janowie){
+            System.out.println(jan.name() + " " + jan.getBirthDate());
+        }
+        System.out.println(janowie);
     }
 }
